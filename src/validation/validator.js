@@ -12,9 +12,7 @@ const isValidRequestBody = (requestBody) => {
 }
 
 //validation for 
-const isValidPassword = (password) => {
-  if (password.length > 7 && password.length < 16) return true
-}
+
 
 
 //to check validation of objectId
@@ -22,4 +20,4 @@ const isValidObjectId = (objectId) => {
   return mongoose.isValidObjectId(objectId)
 }
 
-module.exports = {isValid,isValidObjectId,isValidRequestBody,isValidPassword}
+module.exports = {isValid,isValidObjectId,isValidRequestBody}

@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 let saltRounds = 10
 
-const {isValid, isValidObjectId,isValidRequestBody,isValidPassword} = require("../validation/validator")
+const {isValid, isValidObjectId,isValidRequestBody} = require("../validation/validator")
 
 const createUser = async (req, res) => {
     try {
@@ -13,17 +13,17 @@ const createUser = async (req, res) => {
         const {name,email,password}=data
 
         if (!isValidRequestBody(data)) {
-            return res.status(400).send({ status: false, message: "Please provide data to create Design" })
+            return res.status(400).send({ status: false, message: "Please provide data to create user" })
         }
         
         if (!isValid(name)) {
-            return res.status(400).send({ status: false, message: "please provide product's title" })
+            return res.status(400).send({ status: false, message: "please provide user's name" })
         }
         if (!isValid(email)) {
             return res.status(400).send({ status: false, Message: "Please provide your email" })
         }
-     if(!isValidPassword(password)){
-        return res.status(400).send({status:false,message:"please provide valid password"})
+     if(!isValid(password)){
+        return res.status(400).send({status:false,message:"please provide  password"})
      }
 
         const encryptPassword = await bcrypt.hash(req.body.password, saltRounds)
@@ -49,7 +49,7 @@ const loginUser = async (req, res) => {
         let { email, password } = req.body;
 
         if (!isValidRequestBody(req.body)) {
-            return res.status(400).send({ status: false, message: "Please provide data to create Design" })
+            return res.status(400).send({ status: false, message: "Please provide email password" })
         }
         if (!isValid(email)) {
             return res.status(400).send({ status: false, Message: "Please provide your email" })
@@ -57,10 +57,10 @@ const loginUser = async (req, res) => {
        
          let user = await userModel.findOne({ email: email })    // DB Call
     //   console.log(user)
-        if (!user) { return res.status(404).send({ status: false, msg: "email  is invalid!" }) }
+        if (!user) { return res.status(404).send({ status: false, msg: "email  is invalid! or not in db" }) }
 
-        if(!isValidPassword(password)){
-            return res.status(400).send({status:false,message:"please provide valid password"})
+        if(!isValid(password)){
+            return res.status(400).send({status:false,message:"please provide your password"})
          }
         const passwordMatch = await bcrypt.compare(password, user.password)
         if (!passwordMatch) {
@@ -87,8 +87,8 @@ const loginUser = async (req, res) => {
 }
 
 const getDesignDetail = async (req,res) => {
-
-    const userId=req.params.userId
+try {
+     const userId=req.params.userId
 
     if(!isValidObjectId(userId)){
         return res.status(400).send({status:false,message:"userid is incorrect"})
@@ -107,8 +107,15 @@ const getDesignDetail = async (req,res) => {
     }
     return res.status(200).send({status:true,data:detail})
 }
+catch (err) {
+    console.log("This is the error:", err.message)
+    return res.status(500).send({ status: false, msg: err.message })
+}
+
+}
 
 const getSpecificDetail= async (req,res) =>{
+    try{
      const DesignId= req.params.DesignId
 
      if(!isValidObjectId(DesignId)){
@@ -122,6 +129,11 @@ const getSpecificDetail= async (req,res) =>{
      const fetch=Design.description
 
     return res.status(200).send({status:true,specification:fetch})
+}
+catch (err) {
+    console.log("This is the error:", err.message)
+    return res.status(500).send({ status: false, msg: err.message })
+}
 }
 
 module.exports = { createUser, loginUser,getDesignDetail,getSpecificDetail }

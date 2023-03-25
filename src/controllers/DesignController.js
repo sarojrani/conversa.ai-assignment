@@ -28,7 +28,7 @@ if (!isValid(description)) {
     return res.status(400).send({ status: false, message: "Please provide products's descriptions" })
 }
 if(!isValidObjectId(userId)){
-  return res.status(400).send({status:false,message:"userid is incorrect"})
+  return res.status(400).send({status:false,message:"userid is incorrect or invalid"})
 }
 if (!isValid(price)) {
     return res.status(400).send({ status: false, message: "Please provide products's price" })
@@ -89,6 +89,7 @@ const updateDesign= async (req,res) => {
   }
 }
 const DeleteDesign= async (req,res) =>{
+  try{
   const DesignId = req.params.DesignId;
 
   if(!isValidObjectId(DesignId)){
@@ -100,6 +101,10 @@ const DesignDelete= await DesignModel.findOneAndDelete({_id:DesignId},{$set:{isD
 if (!DesignDelete) { return res.status(404).send({ msg: "Already deleted" }) }
 
 res.status(200).send({ msg: "Deleted" })
+}
+catch (err) {
+  return res.status(500).send({ status: false, msg: err.message })
+}
 }
 
 module.exports={createDesign,getDesign,updateDesign,DeleteDesign}
