@@ -48,209 +48,7 @@ ex-
 }
 
 #3RD API FOR GETING ALL DESIGN DETAIL FOR USER-HERE I AM GIVING USERID FOR GETTING SPECFIC USER HE/SHE CAN READ OR SEE ALL DESIGN DETAIL WHICH IS PRESENT IS DATABASE.--localhost:5000/getInfo/641d4c54a1bf0342932a50b3
-{
-    "status": true,
-    "data": {
-        "name": "saroj",
-        "data": [
-            {
-                "Model": null,
-                "_id": "641d336545dfcff054f1a747",
-                "id": 201,
-                "title": "3d design",
-                "description": "looking horor",
-                "user": "soni",
-                "price": 10000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T05:21:41.722Z",
-                "updatedAt": "2023-03-24T05:21:41.722Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d338a45dfcff054f1a749",
-                "id": 205,
-                "title": "3d new Design",
-                "description": "looking fabulus",
-                "user": "priya",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty",
-                    "natural sunshine",
-                    "home",
-                    "home"
-                ],
-                "createdAt": "2023-03-24T05:22:18.467Z",
-                "updatedAt": "2023-03-24T16:12:12.267Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d4b24a2f72635c4fbcc9c",
-                "id": 210,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d4712eae58aacba658c27",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T07:03:00.301Z",
-                "updatedAt": "2023-03-24T07:03:00.301Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d4c74a1bf0342932a50b6",
-                "id": 210,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d4712eae58aacba658c27",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T07:08:36.857Z",
-                "updatedAt": "2023-03-24T07:08:36.857Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d5d31401832c59926d342",
-                "id": 210,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d4f55f90472213978ccb0",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T08:20:01.038Z",
-                "updatedAt": "2023-03-24T08:20:01.038Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d670ed3b6650e707b950a",
-                "id": 210,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d4f55f90472213978ccb0",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T09:02:06.932Z",
-                "updatedAt": "2023-03-24T09:02:06.932Z",
-                "__v": 0
-            },
-            {
-                "Model": null,
-                "_id": "641d68c9a6c8e5b7efa9f235",
-                "id": 210,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d4f55f90472213978ccb0",
-                "user": "soni",
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T09:09:29.594Z",
-                "updatedAt": "2023-03-24T09:09:29.594Z",
-                "__v": 0
-            },
-            {
-                "_id": "641d9f6200e7117015294439",
-                "id": 220,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d9ee000e7117015294436",
-                "user": "monika",
-                "Model": null,
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T13:02:26.062Z",
-                "updatedAt": "2023-03-24T13:02:26.062Z",
-                "__v": 0
-            },
-            {
-                "_id": "641da3feb4b4b0184e4b9993",
-                "id": 220,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d9ee000e7117015294436",
-                "user": "monika",
-                "Model": null,
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T13:22:06.144Z",
-                "updatedAt": "2023-03-24T13:22:06.144Z",
-                "__v": 0
-            },
-            {
-                "_id": "641db00e2f06a9cb222c3aab",
-                "id": 220,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d9ee000e7117015294436",
-                "user": "monika",
-                "Model": null,
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T14:13:34.698Z",
-                "updatedAt": "2023-03-24T14:13:34.698Z",
-                "__v": 0
-            },
-            {
-                "_id": "641dcbcf29894d29572ffbfb",
-                "id": 220,
-                "title": "3d  modern design",
-                "description": "looking fabulus",
-                "userId": "641d9ee000e7117015294436",
-                "user": "monika",
-                "Model": null,
-                "price": 7000,
-                "tags": [
-                    "kids",
-                    "flower",
-                    "natural beauty"
-                ],
-                "createdAt": "2023-03-24T16:11:59.588Z",
-                "updatedAt": "2023-03-24T16:11:59.588Z",
-                "__v": 0
-            }
-        ]
-    }
-}
+
 
 ## 4th api -for getting specific detail of design by user--
 {
@@ -258,59 +56,33 @@ ex-
     "specification": "looking fabulus"
 }
 ##design
-####5th api for creting design -i am giving id,title,description,price,tag for stroing information on db.
-
+####5th api for /creating -design -i am giving id,title,description,price,tag for stroing information on db.
 {
     "status": true,
     "data": {
-        "id": 220,
-        "title": "3d  modern design",
-        "description": "looking fabulus",
+        "id": "641e97356101739e980bf7cd",
         "userId": "641d9ee000e7117015294436",
-        "user": "monika",
-        "Model": null,
-        "price": 7000,
+        "title": "3d design ",
+        "description": "saw top bottom view",
+        "Model": "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/undefined/3d%20title.htm",
+        "price": 4000,
         "tags": [
-            "kids",
-            "flower",
-            "natural beauty"
-        ],
-        "_id": "641e82ef5e27aa256fe5ecaa",
-        "createdAt": "2023-03-25T05:13:19.510Z",
-        "updatedAt": "2023-03-25T05:13:19.510Z",
-        "__v": 0
+            "beautifull wall design,mehndi design"
+        ]
     }
 }
-##6th api-reading-geting all detail of design which is stored in db.
+
+##6th api-/READING-geting all detail of design which is stored in db.
 
 
-7 th api-updating-by giving designId as params on url-i am updating title description tag also.
-{
-    "data": {
-        "Model": null,
-        "_id": "641d338a45dfcff054f1a749",
-        "id": 205,
-        "title": "3d new Design",
-        "description": "looking fabulus",
-        "user": "priya",
-        "price": 7000,
-        "tags": [
-            "kids",
-            "flower",
-            "natural beauty",
-            "natural sunshine",
-            "home",
-            "home",
-            "home",
-            "new tree"
-        ],
-        "createdAt": "2023-03-24T05:22:18.467Z",
-        "updatedAt": "2023-03-25T05:15:34.159Z",
-        "__v": 0
-    }
-}
+7 th api-/updating-by giving designId as params on url-i am updating title description tag also.
+
 
 8 th -deleting-by giving designId-deleting and set isdeleted-true.
+
+///######### POSTMAN COLLECTION ##//
+I WILL BE PUTTING ON MAIL YOU CAN ONLY IMPORT ON YOUR POSTMAN . 
+
 
 
 
