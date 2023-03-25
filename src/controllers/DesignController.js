@@ -1,23 +1,26 @@
 const DesignModel = require("../models/DesignModel");
-const {isValid, isValidObjectId,isValidRequestBody} = require("../validation/validator")
+const {isValid, isValidObjectId,isValidRequestBody,isValidFiles} = require("../validation/validator");
+const uploadFile = require("../aws/aws")
 
-  // const uploadFile= require("../aws/aws")
-// 
- // const productPhoto = await uploadFile(files[0])
-
+  
 
 const createDesign = async (req,res) =>{
   try{
 
-   
     const data=req.body;
-    // const files = req.files;
+    // console.log(data)
+    const files = req.files;
 
-    const {id, title, description,Model, userId,price,tags }=data
+    const {id, title, description,Model,userId,price,tags }=data
     
     if (!isValidRequestBody(data)) {
       return res.status(400).send({ status: false, message: "Please provide data to create Design" })
   }
+  if (!isValidFiles(files)) {
+    return res.status(400).send({ status: false, message: "please provide products's image" })
+}
+
+  
   if (!isValid(id)) {
     return res.status(400).send({ status: false, message: "Please provide product id" })
 }
@@ -27,8 +30,9 @@ const createDesign = async (req,res) =>{
 if (!isValid(description)) {
     return res.status(400).send({ status: false, message: "Please provide products's descriptions" })
 }
+
 if(!isValidObjectId(userId)){
-  return res.status(400).send({status:false,message:"userid is incorrect or invalid"})
+  return res.status(400).send({status:false,message:"userid is incorrect"})
 }
 if (!isValid(price)) {
     return res.status(400).send({ status: false, message: "Please provide products's price" })
@@ -37,20 +41,22 @@ if (!isValid(tags)) {
   return res.status(400).send({ status: false, message: "Please provide products's tags" })
 }
 
-// const ModelPhoto = await uploadFile(files[0])
+const ModelPhoto = await uploadFile(files[0])
 
-// const modelData={
-//   id:id,
-//   userId:userId,
-//   title:title,
-//   description:description,
-//  price:price,
-//  tags:tags,
-//  Model:ModelPhoto
-// }
+
     
     const saveData=await DesignModel.create(data)
-  return res.status(201).send({status:true,data:saveData})
+    const modelData={
+      id:saveData.id,
+      userId: saveData.userId,
+      title: saveData.title,
+      description:saveData.description,
+      Model:ModelPhoto,
+     price:saveData.price,
+     tags:saveData.tags
+     
+    }
+  return res.status(201).send({status:true,data:modelData})
   } 
   catch(err){
     return res.status(500).send({status:false,msg:err.msg})
@@ -89,7 +95,6 @@ const updateDesign= async (req,res) => {
   }
 }
 const DeleteDesign= async (req,res) =>{
-  try{
   const DesignId = req.params.DesignId;
 
   if(!isValidObjectId(DesignId)){
@@ -101,10 +106,6 @@ const DesignDelete= await DesignModel.findOneAndDelete({_id:DesignId},{$set:{isD
 if (!DesignDelete) { return res.status(404).send({ msg: "Already deleted" }) }
 
 res.status(200).send({ msg: "Deleted" })
-}
-catch (err) {
-  return res.status(500).send({ status: false, msg: err.message })
-}
 }
 
 module.exports={createDesign,getDesign,updateDesign,DeleteDesign}

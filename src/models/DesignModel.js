@@ -3,9 +3,7 @@ const mongoose = require('mongoose')
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const DesignSchema = new mongoose.Schema({
-   id: {
-      type: Number,
-   },
+   
    title: {
       type: String,
       required: true
@@ -25,8 +23,9 @@ const DesignSchema = new mongoose.Schema({
       required:true,
    },
    Model:{
-      type: String,
-      default: null
+      type:String, 
+      require:true
+   
    },
    price: {
       type: Number,

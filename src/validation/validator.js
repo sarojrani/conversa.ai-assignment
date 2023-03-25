@@ -11,7 +11,10 @@ const isValidRequestBody = (requestBody) => {
   return Object.keys(requestBody).length 
 }
 
-//validation for 
+//validation for  files
+const isValidFiles = (files) => {
+  if (files && files.length > 0) return true
+}
 
 
 
@@ -20,4 +23,4 @@ const isValidObjectId = (objectId) => {
   return mongoose.isValidObjectId(objectId)
 }
 
-module.exports = {isValid,isValidObjectId,isValidRequestBody}
+module.exports = {isValid,isValidObjectId,isValidRequestBody,isValidFiles}

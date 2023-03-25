@@ -1,13 +1,16 @@
 const express=require('express');
+const multer=require('multer');
 const bodyParser = require('body-parser');
 const route = require('./routes/route.js');
 const mongoose=require('mongoose');
 const dotenv=require('dotenv').config()
 
 const app=express()
+
 let port=process.env.PORT || 5000
 
 app.use(bodyParser.json());
+app.use(multer().any());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
