@@ -2,8 +2,8 @@
 ## setup step and run the project
 
 1-clone by using Terminal/Git bush-command-git clone https://github.com/sarojrani/conversa.ai-assignment.git
-2-install all dependencies(node_modules)-npm i
-3-run server command-npm start
+2-install all dependencies(node_modules)-command----npm i
+3-run server command----npm start
 
 ##** TO PERFORM CRUD OPERATION PLEASE GO THROOUGH THE BELLOW API_URL
 TO CREATE USER-localhost:5000/user
